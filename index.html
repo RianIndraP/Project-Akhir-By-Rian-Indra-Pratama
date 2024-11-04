@@ -1,43 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.tailwindcss.com">
     <title>LOGIN</title>
     <style>
         body {
-            background-image: url('assets/image/bg.jpeg');
+            background-image: url('assets/image/bg.jpg');
             margin: 0;
             padding: 0;
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
+            height: 100vh;
         }
     </style>
 </head>
-<body>
-    <form action="" class="">
-        <h1>LOGIN</h1>
-        <div>
-            <i class="fa-solid fa-envelope-open-text"></i>
-            <input type="email" name="" id="" placeholder="Email">
-        </div>2
-        <div>
-            <i class="fa-solid fa-lock"></i>
-            <input type="password" name="" id="" placeholder="Password">
-        </div>
-        <button type="submit"></button>
-        <div>
-            <p>Belum punya akun?
-                <a href="#">Buat Akun Disini </a>
-            </p>
-        </div>
-    </form>
 
+<body>
+    <div class="center input">
+        <h1 class="mb-3">Welcome Back</h1>
+        <form method="post" id="LoginForm">
+            <div class="txt_field">
+                <input type="text" id="email" required>
+                <br>
+                <label for="email">Email Address</label>
+                <div class="error_message" id="email_error">Please enter a valid email address.</div>
+            </div>
+            <div class="txt_field">
+                <input type="password" id="password" required maxlength="8">
+                <br>
+                <label for="password">Password</label>
+                <div class="error_message" id="password_error">Password must be at least 6 characters.</div>
+            </div>
+            <div class="forgot fs-6 fw-medium">
+                Forgot Password
+            </div>
+            <!-- <input type="submit" value="SignUp"> -->
+            <button type="submit" id="submit_btn" class="disabled text-white" disabled>SignUp</button>
+            <div class="users_signup">
+                Already have an account? <a href="SignUp.html">Login</a>
+            </div>
+        </form>
+    </div>
 
     <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById("LoginForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            let isValid = true;
+
+            // Email validation
+            const email = document.getElementById("email").value;
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                document.getElementById("email_error").style.display = "block";
+                isValid = false;
+            } else {
+                document.getElementById("email_error").style.display = "none";
+            }
+
+            // Password validation
+            const password = document.getElementById("password").value;
+            if (password.length < 6) {
+                document.getElementById("password_error").style.display = "block";
+                isValid = false;
+            } else {
+                document.getElementById("password_error").style.display = "none";
+            }
+
+            if (isValid) {
+                alert("Form submitted successfully!");
+                window.location.href = "LandingPage.html";
+            }
+        });
+    </script>
 </body>
+
 </html>

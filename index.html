@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <title>Document</title>
+    <title>Log in and Learn</title>
     <style>
         body {
             background-color: #2c2c54;
-            /* font-family: 'Roboto', sans-serif; */
+            font-family: 'Roboto', sans-serif;
         }
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -19,12 +19,12 @@
 <body class="flex items-center justify-center min-h-screen relative">
 
     <!-- Kotak -->
-    <div class="absolute top-10 left-10 w-10 h-10 bg-pink-500"></div>
-    <div class="absolute top-1/3 right-56 w-10 h-10 bg-blue-500"></div>
-    <div class="absolute bottom-5 left-44 w-10 h-10 bg-blue-900"></div>
-    <div class="absolute bottom-16 left-32 w-10 h-10 bg-purple-500"></div>
+    <div class="absolute top-10 left-10 w-10 h-10 bg-pink-500 sm:max-xl:hidden"></div>
+    <div class="absolute top-1/3 right-56 w-10 h-10 bg-blue-500 sm:max-xl:hidden"></div>
+    <div class="absolute bottom-5 left-44 w-10 h-10 bg-blue-900 sm:max-xl:hidden"></div>
+    <div class="absolute bottom-16 left-32 w-10 h-10 bg-purple-500 sm:max-xl:hidden"></div>
 
-    <div class="bg-[#2C2D4A] text-center p-8 rounded-lg shadow-lg w-2/4">
+    <div class="text-center p-8 rounded-lg shadow-lg w-2/4">
         <h1 class="text-white text-5xl font-bold mb-8">
             LEARN
         </h1>
@@ -32,13 +32,14 @@
             Welcome back!
         </h2>
         <form class="space-y-5">
-            <input class="w-full py-3 pl-5 rounded-lg bg-[#3B3C5A] text-white placeholder-gray-400 text-xl focus:outline-none"
+            <input
+                class="w-full py-3 pl-5 rounded-lg bg-[#3B3C5A] text-white placeholder-gray-400 text-xl focus:outline-none"
                 placeholder="Your e-mail" type="email" />
             <div class="relative">
-                <input class="w-full py-3 pl-5 rounded-lg bg-[#3B3C5A] text-white placeholder-gray-400 text-xl focus:outline-none"
+                <input
+                    class="w-full py-3 pl-5 rounded-lg bg-[#3B3C5A] text-white placeholder-gray-400 text-xl focus:outline-none "
                     placeholder="Your password" type="password" />
-                <i class="fas fa-eye absolute right-5 top-1/3 text-gray-400">
-                </i>
+                <i class="fas fa-eye absolute right-5 top-1/3 text-gray-400"></i>
             </div>
             <button class="w-full p-3 rounded-lg bg-purple-500 text-white font-bold" type="submit">
                 Log in
@@ -47,7 +48,7 @@
         <div class="mt-4 text-white">
             <p>
                 Don't have an account?
-                <a class="underline" href="#">
+                <a class="underline" href="SignUp.html">
                     Create an account
                 </a>
             </p>

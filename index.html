@@ -99,34 +99,34 @@
         const form = document.getElementById("form");
         const email = document.getElementById("email");
         const pass = document.getElementById("pass");
-        const pass_pattern = "[A-Za-z0-9]{4,8}";
-        const errorModal_1 = document.getElementById("errorModal_1");
-        const errorModal_2 = document.getElementById("errorModal_2");
-        const errorModal_3 = document.getElementById("errorModal_3");
-
+        const errorModals = {
+            1: document.getElementById("errorModal_1"),
+            2: document.getElementById("errorModal_2"),
+            3: document.getElementById("errorModal_3"),
+        };
+        const pass_pattern = /^[A-Za-z0-9]{4,8}$/;
+    
         form.addEventListener("submit", function (event) {
-            if (!pass.value || !email.value) {
+            let showErrorModal = null;
+    
+            if (!email.value || !pass.value) {
+                showErrorModal = 2;
+            } else if (pass.value.length < 4) {
+                showErrorModal = 1;
+            } else if (!pass_pattern.test(pass.value)) {
+                showErrorModal = 3;
+            }
+    
+            if (showErrorModal) {
                 event.preventDefault();
-                errorModal_2.classList.remove("hidden");
-            } else {
-                if (pass.value.length < 4) {
-                    event.preventDefault();
-                    errorModal_1.classList.remove("hidden");
-                } else if (!pass_pattern.test(pass.value)) {
-                    event.preventDefault();
-                    errorModal_3.classList.remove("hidden");
-                };
-            };
+                errorModals[showErrorModal].classList.remove("hidden");
+            }
         });
-
-        document.getElementById("closeModal_1").addEventListener("click", function () {
-            errorModal_1.classList.add("hidden");
-        });
-        document.getElementById("closeModal_2").addEventListener("click", function () {
-            errorModal_2.classList.add("hidden");
-        });
-        document.getElementById("closeModal_3").addEventListener("click", function () {
-            errorModal_3.classList.add("hidden");
+    
+        Object.keys(errorModals).forEach(key => {
+            document.getElementById(`closeModal_${key}`).addEventListener("click", function () {
+                errorModals[key].classList.add("hidden");
+            });
         });
     </script>
 </body>

@@ -121,6 +121,8 @@
             if (showErrorModal) {
                 event.preventDefault();
                 errorModals[showErrorModal].classList.remove("hidden");
+            } else {
+                window.location.href = "home.html";
             }
         });
 

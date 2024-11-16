@@ -97,6 +97,17 @@
         </div>
     </div>
 
+    <!-- !pass_pattern -->
+    <div id="errorModal_4" class="hidden fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center">
+        <div class="bg-white rounded-lg shadow-lg p-6 max-w-sm w-full">
+            <h2 class="text-lg font-bold mb-4">Peringatan</h2>
+            <p id="error-message">Anda harus menyetujui Terms of Service!</p>
+            <div class="mt-4 flex justify-end">
+                <button id="closeModal_4"
+                    class="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600">Tutup</button>
+            </div>
+        </div>
+    </div>
 
     <script>
         const form = document.getElementById('form');
@@ -107,20 +118,21 @@
         const errorModals = {
             1: document.getElementById('errorModal_1'),
             2: document.getElementById('errorModal_2'),
-            3: document.getElementById('errorModal_3')
+            3: document.getElementById('errorModal_3'),
+            4: document.getElementById('errorModal_4')
         };
 
         form.addEventListener("submit", function (event) {
             let showErrorModal = null;
 
-            if (!email.value || !pass.value || !terms.checked) {
+            if (!email.value || !pass.value) {
                 showErrorModal = 1;
             } else if (pass.value.length < 4) {
                 showErrorModal = 2;
             } else if (!pass_pattern.test(pass.value)) {
                 showErrorModal = 3;
             } else if (!terms.checked) {
-                showErrorModal = 1;
+                showErrorModal = 4;
             }
 
             if (showErrorModal) {
@@ -131,7 +143,7 @@
 
         Object.keys(errorModals).forEach(key => {
             document.getElementById(`closeModal_${key}`).addEventListener("click", function () {
-                errorModals(key).classList.add("hidden");
+                errorModals[key].classList.add("hidden");
             });
         });
     </script>

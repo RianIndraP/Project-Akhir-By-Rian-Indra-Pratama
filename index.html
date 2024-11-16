@@ -105,10 +105,10 @@
             3: document.getElementById("errorModal_3"),
         };
         const pass_pattern = /^[A-Za-z0-9]{4,8}$/;
-    
+
         form.addEventListener("submit", function (event) {
             let showErrorModal = null;
-    
+
             if (!email.value || !pass.value) {
                 showErrorModal = 2;
             } else if (pass.value.length < 4) {
@@ -116,13 +116,13 @@
             } else if (!pass_pattern.test(pass.value)) {
                 showErrorModal = 3;
             }
-    
+
             if (showErrorModal) {
                 event.preventDefault();
                 errorModals[showErrorModal].classList.remove("hidden");
             }
         });
-    
+
         Object.keys(errorModals).forEach(key => {
             document.getElementById(`closeModal_${key}`).addEventListener("click", function () {
                 errorModals[key].classList.add("hidden");

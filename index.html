@@ -105,6 +105,7 @@
             3: document.getElementById("errorModal_3")
         };
         const pass_pattern = /^[A-Za-z0-9]{4,8}$/;
+        const email_pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
         form.addEventListener("submit", function (event) {
             let showErrorModal = null;
@@ -113,7 +114,7 @@
                 showErrorModal = 2;
             } else if (pass.value.length < 4) {
                 showErrorModal = 1;
-            } else if (!pass_pattern.test(pass.value)) {
+            } else if (!pass_pattern.test(pass.value) || !email_pattern.test(email.value)) {
                 showErrorModal = 3;
             }
 

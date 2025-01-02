@@ -8,48 +8,110 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <title>Document</title>
+  <script>
+    function openTT() {
+      const url = "https://www.tiktok.com/@rian_indra_p";
+      window.open(url, '_blank');
+    }
+    function openIG() {
+      const url = "https://www.instagram.com/rndraaaa__/";
+      window.open(url, '_blank');
+    }
+    function openFB() {
+      const url = "https://web.facebook.com/profile.php?id=100061089565889";
+      window.open(url, '_blank');
+    }
+    function openGIT() {
+      const url = "https://github.com/RianIndraP";
+      window.open(url, '_blank');
+    }
+  </script>
 </head>
 
-<body class="bg-gray-100">
-  <footer class="bg-gray-800 text-white py-6">
+<body class="bg-zinc-900">
+
+  <footer class="bg-zinc-800 relative pt-8 pb-6 text-white ">
     <div class="container mx-auto px-4">
-      <div class="flex flex-row justify-between items-center">
-        <!-- Social Media Links -->
-        <div class="mb-0">
-          <ul class="flex space-x-4">
-            <li>
-              <a href="https://www.tiktok.com" target="_blank" class="flex items-center space-x-2 hover:text-gray-400">
-                <i class="fab fa-tiktok w-6 h-6"></i>
-                <span>TikTok</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://www.instagram.com" target="_blank"
-                class="flex items-center space-x-2 hover:text-gray-400">
-                <i class="fab fa-instagram w-6 h-6"></i>
-                <span>Instagram</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://www.github.com" target="_blank" class="flex items-center space-x-2 hover:text-gray-400">
-                <i class="fab fa-github w-6 h-6"></i>
-                <span>GitHub</span>
-              </a>
-            </li>
-          </ul>
+      <div class="flex flex-wrap text-left">
+        <div class="w-6/12 px-4">
+          <h4 class="text-3xl font-semibold">Let's keep in touch!</h4>
+          <h5 class="text-lg mt-0 mb-2">
+            Find us on any of these platforms, we respond 1-2 days.
+          </h5>
+          <div class="mt-6 mb-0">
+            <button onclick="openTT()"
+              class="hover:scale-125 transition duration-300 ease-in-out bg-white text-[#010101] shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
+              type="button">
+              <i class="text-xl fa-brands fa-tiktok"></i>
+            </button>
+            <button onclick="openFB()"
+              class="hover:scale-125 transition duration-300 ease-in-out bg-white text-[#3b5998] shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
+              type="button">
+              <i class="text-xl fab fa-facebook-square"></i>
+            </button>
+            <button onclick="openIG()"
+              class="hover:scale-125 transition duration-300 ease-in-out bg-white text-[#e1306c] shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
+              type="button">
+              <i class="text-xl fa-brands fa-instagram"></i>
+            </button>
+            <button onclick="openGIT()"
+              class="hover:scale-125 transition duration-300 ease-in-out text-[#171515] bg-white text-blueGray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
+              type="button">
+              <i class="text-xl fab fa-github"></i>
+            </button>
+          </div>
         </div>
-
-        <!-- Contact Info -->
-        <div class="mb-0 text-center">
-          <p>Contact:</p>
-          <p>Email: <a href="mailto:your-email@example.com" class="hover:text-gray-400">your-email@example.com</a></p>
-          <p>WA: <a href="https://wa.me/your-number" target="_blank" class="hover:text-gray-400">+62 123 4567 890</a>
-          </p>
+        <div class="w-6/12 px-4">
+          <div class="flex flex-wrap items-top mb-6">
+            <div class="w-4/12 px-4 ml-auto">
+              <span class="block uppercase text-base font-semibold mb-2">Useful Links</span>
+              <ul class="list-unstyled">
+                <li>
+                  <a class="hover:text-blue-400 hover:text-opacity-75 transition-colors duration-300 font-semibold block pb-2 text-sm"
+                    href="https://www.instagram.com/rndraaaa__/">About Us</a>
+                </li>
+                <li>
+                  <a class="hover:text-blue-400 hover:text-opacity-75 transition-colors duration-300 font-semibold block pb-2 text-sm"
+                    href="https://github.com/RianIndraP">Github</a>
+                </li>
+              </ul>
+            </div>
+            <div class="w-5/12 px-4">
+              <span class="block uppercase text-base font-semibold mb-2">Contact</span>
+              <ul class="list-unstyled">
+                <li class="font-semibold block pb-2 text-sm">
+                  Phone:
+                  <a class="hover:text-blue-400 hover:text-opacity-75 transition-colors duration-300"
+                    href="tel:+6287817956703">
+                    +62 878 1795 6703
+                  </a>
+                </li>
+                <li class="font-semibold block pb-2 text-sm">
+                  WhatsApp:
+                  <a class="hover:text-blue-400 hover:text-opacity-75 transition-colors duration-300"
+                    href="https://wa.me/6287817956703" target="_blank">
+                    Chat via WhatsApp
+                  </a>
+                </li>
+                <li class="font-semibold block pb-2 text-sm">
+                  Email:
+                  <a class="hover:text-blue-400 hover:text-opacity-75 transition-colors duration-300"
+                    href="mailto:www.rian2008@gmail.com">
+                    www.rian2008@gmail.com
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-
-        <!-- Copyright -->
-        <div class="text-right">
-          <p>&copy; 2025 Your Company. All rights reserved.</p>
+      </div>
+      <hr class="my-6 ">
+      <div class="flex flex-wrap items-center justify-between">
+        <div class="w-4/12 px-4 mx-auto text-center">
+          <div class="text-sm font-semibold py-1">
+            Copyright © <span>2025</span> Proyek open-source oleh <a href="https://www.instagram.com/rndraaaa__/"
+              class="text-blueGray-500 hover:text-blue-400 hover:text-opacity-75 transition-colors duration-300">Rndraaaa__</a>.
+          </div>
         </div>
       </div>
     </div>
